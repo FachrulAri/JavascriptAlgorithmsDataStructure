@@ -20,3 +20,16 @@ function countdown(n) {
   }
 }
 console.log("Countdown", countdown(5));
+
+// Range of Number using Recursion
+// startNum to endNum only ++
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum < startNum) {
+    return [];
+  } else {
+    const numbers = rangeOfNumbers(startNum, endNum - 1);
+    numbers.push(endNum);
+    return numbers;
+  }
+}
+console.log(rangeOfNumbers(1, 50));
