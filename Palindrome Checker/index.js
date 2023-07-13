@@ -10,3 +10,10 @@ function palindrome(str) {
 }
 
 palindrome("eye");
+
+// Number Palindrome
+var isPalindrome = function (x) {
+  const revPali = parseInt(x.toString().split("").reverse().join(""));
+  return revPali == x ? true : false;
+};
+isPalindrome(-121);
