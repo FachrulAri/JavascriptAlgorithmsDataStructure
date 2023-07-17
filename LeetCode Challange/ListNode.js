@@ -25,10 +25,14 @@ addTwoNumbers(l1, l2);
 // Input: list1 = [1,2,4], list2 = [1,3,4]
 // Output: [1,1,2,3,4,4]
 var mergeTwoLists = function (l1, l2) {
+  // if the l1 undefined or doesnt exist, return l2. and the otherwise
   if (!l1) return l2;
   else if (!l2) return l1;
+  // if the list 1 item is lower than the current list 2 item. recursive the list 1 array with next item
+  // return current l1 item and the otherwise
   else if (l1.val <= l2.val) {
     l1.next = mergeTwoLists(l1.next, l2);
+    console.log(l1);
     return l1;
   } else {
     l2.next = mergeTwoLists(l1, l2.next);
