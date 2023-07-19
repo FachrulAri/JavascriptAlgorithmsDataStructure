@@ -68,3 +68,21 @@ var removeDuplicates = function (nums) {
 // Input: nums = [0,0,1,1,1,2,2,3,3,4]
 // Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
 removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]);
+
+console.log("==== Break ====");
+
+// Remove Element
+// Given an integer array nums and an integer val, remove all occurrences of val in nums in-place.
+// The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
+// Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
+// Change the array nums such that the first k elements of nums contain the elements which are not equal to val.
+//  The remaining elements of nums are not important as well as the size of nums.
+// Return k.
+var removeElement = function (nums, val) {
+  // Cant user filter, since its not change the base "nums" array element and using js function
+  // console.log(nums.filter((num) => num !== val));
+  let j = 0;
+  for (let n of nums) if (n !== val) nums[j++] = n;
+  return j; // return 3
+};
+removeElement([3, 2, 2, 3, 1], 3);
