@@ -40,3 +40,37 @@ var isValid = function (s) {
 };
 const input = "()[]{}";
 isValid(input);
+
+console.log("==== Break ====");
+// Given two strings needle and haystack, return the index of the first occurrence of needle in haystack,
+//  or -1 if needle is not part of haystack.
+
+// Input: haystack = "sadbutsad", needle = "sad"
+// Output: 0
+// Explanation: "sad" occurs at index 0 and 6.
+// The first occurrence is at index 0, so we return 0.
+
+// Input: haystack = "leetcode", needle = "leeto"
+// Output: -1
+// Explanation: "leeto" did not occur in "leetcode", so we return -1.
+var strStr = function (haystack, needle) {
+  if (needle.length == 0) {
+    return 0;
+  }
+  let M = needle.length;
+  let N = haystack.length;
+  for (let i = 0; i <= N - M; i++) {
+    let j;
+    for (j = 0; j < M; j++)
+      if (haystack.charAt(i + j) != needle.charAt(j)) break;
+
+    if (j == M) {
+      return i;
+    }
+  }
+  return -1;
+};
+// We can use "indexOf()" for simpler solution
+const haystack = "sadbutsad";
+const needle = "sad";
+strStr(haystack, needle);
