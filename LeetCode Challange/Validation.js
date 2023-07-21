@@ -71,6 +71,7 @@ var strStr = function (haystack, needle) {
   return -1;
 };
 // We can use "indexOf()" for simpler solution
+// return haystack.indexOf(needle)
 const haystack = "sadbutsad";
 const needle = "sad";
 strStr(haystack, needle);
