@@ -69,3 +69,34 @@ var plusOne = function (digits) {
   return arr;
 };
 console.log(plusOne([4, 3, 2, 9]));
+console.log("==== Break ====");
+// Given two binary strings a and b, return their sum as a binary string.
+// Input: a = "11", b = "1"
+// Output: "100"
+
+// Input: a = "1010", b = "1011"
+// Output: "10101"
+var addBinary = function (a, b) {
+  let carry = 0;
+  let maxLength = a.length;
+
+  if (a.length > b.length) {
+    b = "0".repeat(a.length - b.length) + b;
+  } else {
+    maxLength = b.length;
+    a = "0".repeat(b.length - a.length) + a;
+  }
+
+  var result = "";
+
+  for (let i = maxLength - 1; i >= 0; i--) {
+    sum = parseInt(a[i]) + parseInt(b[i]) + carry;
+    result = (sum % 2) + result;
+    carry = sum >= 2 ? 1 : 0;
+  }
+  if (carry) {
+    result = "1" + result;
+  }
+  return result;
+};
+console.log(addBinary("1010", "1011"));
