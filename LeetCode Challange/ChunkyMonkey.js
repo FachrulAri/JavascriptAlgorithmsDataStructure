@@ -5,10 +5,10 @@
 function chunkArrayInGroups(arr, size) {
   const newArr = [];
 
-  for (i = 0; i < arr.length; i += size) {
+  for (let i = 0; i < arr.length; i += size) {
     newArr.push(arr.slice(i, i + size));
   }
-  return arr;
+  return newArr;
 }
 
 chunkArrayInGroups(["a", "b", "c", "d", "e"], 2);
