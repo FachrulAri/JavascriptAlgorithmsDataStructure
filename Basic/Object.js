@@ -23,3 +23,50 @@ function addFriend(userObj, friend) {
 }
 
 console.log(addFriend(user, "Pete"));
+
+// Check if an Object has a Property
+// users.hasOwnProperty('Alan');
+// 'Alan' in users;
+// Both of these would return true.
+let users = {
+  Alan: {
+    age: 27,
+    online: true,
+  },
+  Jeff: {
+    age: 32,
+    online: true,
+  },
+  Sarah: {
+    age: 48,
+    online: true,
+  },
+  Ryan: {
+    age: 19,
+    online: true,
+  },
+};
+
+function isEveryoneHere(userObj) {
+  if (
+    "Alan" in userObj &&
+    "Jeff" in userObj &&
+    "Sarah" in userObj &&
+    "Ryan" in userObj
+  ) {
+    return true;
+  }
+  return false;
+  // Simplified
+  // return userObj.hasOwnProperty("Alan") &&
+  // userObj.hasOwnProperty("Jeff") &&
+  // userObj.hasOwnProperty("Sarah") &&
+  // userObj.hasOwnProperty("Ryan");
+
+  // Or we can use this code
+  // return ["Alan", "Jeff", "Sarah", "Ryan"].every(name =>
+  //   userObj.hasOwnProperty(name)
+  // );
+}
+
+console.log(isEveryoneHere(users));
