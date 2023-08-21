@@ -84,14 +84,12 @@ const onlineUser = {
 };
 // Iterate Through the Keys of an Object with a for...in Statement
 function countOnline(allUsers) {
-  // Only change code below this line
   let i = 0;
   for (const stats in allUsers) {
     console.log(allUsers[stats].online);
     if (allUsers[stats]["online"] === true) i++;
   }
   return i;
-  // Only change code above this line
 }
 
 console.log(countOnline(onlineUser));
