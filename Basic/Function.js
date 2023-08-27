@@ -18,3 +18,24 @@ function addNum(x) {
   };
 }
 console.log(addNum(1)(2)(3)(4)());
+
+// The global variable
+const bookList = [
+  "The Hound of the Baskervilles",
+  "On The Electrodynamics of Moving Bodies",
+  "Philosophiæ Naturalis Principia Mathematica",
+  "Disquisitiones Arithmeticae",
+];
+// Creating new array with function without modify or alter the array. we can use spread operator
+function remove(bookList, bookName) {
+  const newArr = [...bookList];
+
+  const book_index = newArr.indexOf(bookName);
+  if (book_index >= 0) {
+    newArr.splice(book_index, 1);
+    return newArr;
+  }
+  // or we can use command/ function below to simplify it since filter return shallow copy of array without modify base array
+  // return list.filter(book => book !== bookName);
+}
+remove(bookList, "On The Electrodynamics of Moving Bodies");
